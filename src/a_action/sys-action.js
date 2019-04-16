@@ -92,7 +92,7 @@ export const getRoles = (params = {}) => async (dispatch) => {
  * **/
 export const getUserRoles = (params = {}) => async (dispatch) => {
     try {
-        const res = await Fetchapi.newGet('system/user/roles/'+params.id, null);
+        const res = await Fetchapi.newGet('system/user/roles/' + params.id, null);
         return res;
     } catch (err) {
         message.error('网络错误，请重试');
@@ -234,6 +234,32 @@ export const delUser = (params = {}) => async (dispatch) => {
 export const disabledUser = (params = {}) => async (dispatch) => {
     try {
         const res = await Fetchapi.newPut('system/user/disabled/' + params.id, null);
+        return res;
+    } catch (err) {
+        message.error('网络错误，请重试');
+    }
+};
+/**
+ * 修改密码
+ * @param params
+ * @returns {Function}
+ */
+export const modifyPwd = (params = {}) => async (dispatch) => {
+    try {
+        const res = await Fetchapi.newPut('system/user/password', params);
+        return res;
+    } catch (err) {
+        message.error('网络错误，请重试');
+    }
+};
+/**
+ * 登录日志
+ * @param params
+ * @returns {Function}
+ */
+export const loginLog = (params = {}) => async (dispatch) => {
+    try {
+        const res = await Fetchapi.newGet('system/log/login', params);
         return res;
     } catch (err) {
         message.error('网络错误，请重试');

@@ -20,12 +20,16 @@ import lazeHome from 'bundle-loader?lazy&name=home!../a_container/home';
 import lazeMenuAdmin from 'bundle-loader?lazy&name=menuadmin!../a_container/System/MenuAdmin';
 import lazeRoleAdmin from 'bundle-loader?lazy&name=roleadmin!../a_container/System/RoleAdmin';
 import lazeUserAdmin from 'bundle-loader?lazy&name=useradmin!../a_container/System/UserAdmin';
+import lazeLoginLog from 'bundle-loader?lazy&name=loginLog!../a_container/System/LoginLog';
+import lazeSkillAudit from 'bundle-loader?lazy&name=skillAudit!../a_container/carnie/skillAudit';
 
 const NotFound = (props) => (<Bundle load={lazeNotFound}>{(Com) => <Com {...props} />}</Bundle>);
 const Home = (props) => (<Bundle load={lazeHome}>{(Com) => <Com {...props} />}</Bundle>);
 const MenuAdmin = (props) => (<Bundle load={lazeMenuAdmin}>{(Com) => <Com {...props} />}</Bundle>);
 const RoleAdmin = (props) => (<Bundle load={lazeRoleAdmin}>{(Com) => <Com {...props} />}</Bundle>);
 const UserAdmin = (props) => (<Bundle load={lazeUserAdmin}>{(Com) => <Com {...props} />}</Bundle>);
+const loginLog = (props) => (<Bundle load={lazeLoginLog}>{(Com) => <Com {...props} />}</Bundle>);
+const skillAudit = (props) => (<Bundle load={lazeSkillAudit}>{(Com) => <Com {...props} />}</Bundle>);
 
 
 //配置页面
@@ -139,7 +143,9 @@ export default class AppContainer extends React.Component {
                                 <Route exact path="/system/menu" render={(props) => this.onEnter(MenuAdmin, props)} replace/>
                                 <Route exact path="/system/role" render={(props) => this.onEnter(RoleAdmin, props)} replace/>
                                 <Route exact path="/system/user" render={(props) => this.onEnter(UserAdmin, props)} replace/>
+                                <Route exact path="/system/loginLog" render={(props) => this.onEnter(loginLog, props)} replace/>
                                 <Route exact path="/config/sensitive" render={(props) => this.onEnter(Sensitive, props)} replace/>
+                                <Route exact path="/audit/skill" render={(props) => this.onEnter(skillAudit, props)} replace/>
                                 <Route exact render={NotFound} replace/>
                             </Switch>
                         </LocaleProvider>

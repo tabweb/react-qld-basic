@@ -1,0 +1,15 @@
+.auditImage {
+  max-width: 655px;
+}
+
+.cellHidden {
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  display: inline-block;
+
+  width: 120px;
+
+  white-space: nowrap;
+}
