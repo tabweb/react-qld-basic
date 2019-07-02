@@ -460,7 +460,7 @@ export default class MenuAdminContainer extends React.Component {
         return (
             <div className={c(css.page, 'flex-row')}>
                 <div className={c(css.l)}>
-                    <div className={css.title}>菜单目录</div>
+                    <div className={css.title}>菜单目录123</div>
                     <div>
                         <Tree
                             defaultExpandedKeys={['0']}
