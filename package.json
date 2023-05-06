@@ -23,7 +23,7 @@
     "echarts-for-react": "^2.0.15-beta.0",
     "history": "^4.7.2",
     "immutable": "^3.8.2",
-    "jquery": "^3.3.1",
+    "jquery": "^3.5.0",
     "moment": "latest",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
